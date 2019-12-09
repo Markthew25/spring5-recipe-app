@@ -4,12 +4,16 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import guru.springframework.enums.Difficulty;
 
 @Entity
 public class Recipe {
@@ -25,8 +29,6 @@ public class Recipe {
 	private String source;
 	private String url;
 	private String directions;
-	//todo add
-	//private Difficulty diffictulty;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy= "recipe")	
 	private Set<Ingredient> ingredients; 
@@ -36,6 +38,10 @@ public class Recipe {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Notes notes;
+
+	//we change the default behavior of enumerated to EnumType.STRING , so that we will see string values not Integers 
+	@Enumerated(value= EnumType.STRING)
+	private Difficulty diffictulty;
 		
 	public Long getId() {
 		return id;
@@ -102,6 +108,12 @@ public class Recipe {
 	}
 	public void setIngredients(Set<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+	}
+	public Difficulty getDiffictulty() {
+		return diffictulty;
+	}
+	public void setDiffictulty(Difficulty diffictulty) {
+		this.diffictulty = diffictulty;
 	}
 			
 }

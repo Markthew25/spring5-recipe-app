@@ -121,14 +121,14 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 		guacRecipe.setNotes(guacNotes);
 		guacNotes.setRecipe(guacRecipe);
 		
-		guacRecipe.getIngredients().add(new Ingredient("Ripe Avocados", new BigDecimal(2), eachUom));
-		guacRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal(.5), teaSpoonUom));
-		guacRecipe.getIngredients().add(new Ingredient("Fresh lime juice or lemon juice", new BigDecimal(1), tableSpoonUom));
-		guacRecipe.getIngredients().add(new Ingredient("Minced red onion or thinly sliced green onion", new BigDecimal(2), tableSpoonUom));
-		guacRecipe.getIngredients().add(new Ingredient("Serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom));
-		guacRecipe.getIngredients().add(new Ingredient("Cilantro(leaves and tender stems), finely chopped", new BigDecimal(2), tableSpoonUom));
-		guacRecipe.getIngredients().add(new Ingredient("Freshly grated black pepper", new BigDecimal(1), dashUomO));
-		guacRecipe.getIngredients().add(new Ingredient("Ripe tomato, seeds and pulp removed, chopped", new BigDecimal(2), eachUom));
+		guacRecipe.addIngredient(new Ingredient("Ripe Avocados", new BigDecimal(2), eachUom));
+		guacRecipe.addIngredient(new Ingredient("Kosher salt", new BigDecimal(.5), teaSpoonUom));
+		guacRecipe.addIngredient(new Ingredient("Fresh lime juice or lemon juice", new BigDecimal(1), tableSpoonUom));
+		guacRecipe.addIngredient(new Ingredient("Minced red onion or thinly sliced green onion", new BigDecimal(2), tableSpoonUom));
+		guacRecipe.addIngredient(new Ingredient("Serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom));
+		guacRecipe.addIngredient(new Ingredient("Cilantro(leaves and tender stems), finely chopped", new BigDecimal(2), tableSpoonUom));
+		guacRecipe.addIngredient(new Ingredient("Freshly grated black pepper", new BigDecimal(1), dashUomO));
+		guacRecipe.addIngredient(new Ingredient("Ripe tomato, seeds and pulp removed, chopped", new BigDecimal(2), eachUom));
 		
 		guacRecipe.getCategories().add(americanCategory);
 		guacRecipe.getCategories().add(mexicanCategory);
@@ -169,8 +169,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 		tacoRecipe.setNotes(tacoNotes);
 		tacoNotes.setRecipe(tacoRecipe);
 		
-		tacoRecipe.getIngredients().add(new Ingredient("Ancho chilli powder", new BigDecimal(2), tableSpoonUom));
-		tacoRecipe.getIngredients().add(new Ingredient("Holy water", new BigDecimal(2), cupUom));
+		tacoRecipe.addIngredient(new Ingredient("Ancho chilli powder", new BigDecimal(2), tableSpoonUom));
+		tacoRecipe.addIngredient(new Ingredient("Holy water", new BigDecimal(2), cupUom));
 		
 		tacoRecipe.getCategories().add(mexicanCategory);
 		

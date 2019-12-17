@@ -176,8 +176,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 		
 		recipes.add(tacoRecipe);
 		
-		System.out.println(guacRecipe);
-		
 		//return list
 		return recipes;
 		

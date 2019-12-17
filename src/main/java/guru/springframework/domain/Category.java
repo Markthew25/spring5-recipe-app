@@ -8,41 +8,44 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import lombok.Data;
+
 @Entity
 public class Category {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-		
+
 	private String description;
 	
 	@ManyToMany(mappedBy="categories")
 	private Set<Recipe> recipes;
 
-	public Long getId() {
+	protected Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	protected void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getDescription() {
+	protected String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	protected void setDescription(String description) {
 		this.description = description;
 	}
 
-	public Set<Recipe> getRecipes() {
+	protected Set<Recipe> getRecipes() {
 		return recipes;
 	}
 
-	public void setRecipes(Set<Recipe> recipes) {
+	protected void setRecipes(Set<Recipe> recipes) {
 		this.recipes = recipes;
 	}
 	
 	
+
 }
